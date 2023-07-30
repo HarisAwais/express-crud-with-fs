@@ -1,0 +1,10 @@
+// controllers/showUsers.js
+const showUsers = (req, res, next) => {
+  try {
+    res.render("user", { users: User });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = showUsers;
