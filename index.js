@@ -3,7 +3,6 @@ const {engine} = require("express-handlebars");
 const createUser = require("./controllers/createUsers");
 const showUsers = require("./controllers/showUsers");
 const updateUsers = require("./controllers/updateUsers");
-const User = require("./userData.json"); // Load the user data from the JSON file.
 
 const app = express();
 const port = 8000;
@@ -17,7 +16,7 @@ app.set("view engine", ".hbs");
 
 // Routes
 app.post("/users", createUser);
-app.get("/get-users", showUsers);
+app.get("/get-users", showUsers); // Changed the route to /get-users
 app.put("/update/:id", updateUsers);
 
 // Custom error-handling middleware

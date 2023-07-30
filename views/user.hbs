@@ -1,10 +1,15 @@
-// controllers/showUsers.js
-const showUsers = (req, res, next) => {
-  try {
-    res.render("user", { users: User });
-  } catch (err) {
-    next(err);
-  }
-};
-
-module.exports = showUsers;
+<!-- views/user.hbs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Information</title>
+</head>
+<body>
+  <h1>User Information</h1>
+  <ul>
+    {{#each users}}
+      <li>{{this.name}} - {{this.email}}</li>
+    {{/each}}
+  </ul>
+</body>
+</html>
